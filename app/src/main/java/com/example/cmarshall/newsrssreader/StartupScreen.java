@@ -14,15 +14,15 @@ public class StartupScreen extends AppCompatActivity {
         setContentView(R.layout.activity_startup_screen);
     }
 
-    public void setupButton(View view) {
-        CheckBox guardianTechnology = (CheckBox)findViewById(R.id.guardianTechnology);
-        CheckBox bbcNewsTechnology = (CheckBox)findViewById(R.id.bbcNewsTechnology);
-        CheckBox bbcNewsEducation = (CheckBox)findViewById(R.id.bbcNewsEducation);
-        Intent returnData = new Intent();
-        returnData.putExtra("addGuardian", guardianTechnology.isChecked());
-        returnData.putExtra("addBBCTech", bbcNewsTechnology.isChecked());
-        returnData.putExtra("addBBCEducation", bbcNewsEducation.isChecked());
-        setResult(RESULT_OK, returnData);
-        finish();
+    public void setupButton(View view) {//Function to setup a button.
+        CheckBox guardianTechnology = (CheckBox)findViewById(R.id.guardianTechnology);//Get the checkbox for the guardian.
+        CheckBox bbcNewsTechnology = (CheckBox)findViewById(R.id.bbcNewsTechnology);//Get the checkbox for the BBC news technology entry.
+        CheckBox bbcNewsEducation = (CheckBox)findViewById(R.id.bbcNewsEducation);//Get the checkbox for the BBC news education entry.
+        Intent returnData = new Intent();//Create a new intent to hold the data.
+        returnData.putExtra("addGuardian", guardianTechnology.isChecked());//Add checkbox value of guardian.
+        returnData.putExtra("addBBCTech", bbcNewsTechnology.isChecked());//Add checkbox value of BBC news technology.
+        returnData.putExtra("addBBCEducation", bbcNewsEducation.isChecked());//Add checkbox value of BBC news education.
+        setResult(RESULT_OK, returnData);//Set the end result of activity to OK and associate the intent with the close.
+        finish();//Close the activity.
     }
 }

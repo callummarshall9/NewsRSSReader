@@ -21,37 +21,33 @@ import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by cmarshall on 21/04/17.
- */
+public class NewsAdapter extends ArrayAdapter<NewsEntry> {//Custom adapter designed to handle news article feeds.
 
-public class NewsAdapter extends ArrayAdapter<NewsEntry> {
-
-    public NewsAdapter(@NonNull Context context, ArrayList<NewsEntry> newsEntries) {
-        super(context, 0, newsEntries);
+    public NewsAdapter(@NonNull Context context, ArrayList<NewsEntry> newsEntries) {//Constructor for the function.
+        super(context, 0, newsEntries);//Call the inherited method.
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        NewsEntry newsPost = getItem(position);
-        if(convertView == null) {
+    public View getView(int position, View convertView, ViewGroup parent) {//When a request for a view is made.
+        NewsEntry newsPost = getItem(position);//Get the news post in the array associated.
+        if(convertView == null) {//If the view hasn't been created.
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.news_list_item, parent, false);
+            //Inflate the view with the news list item.
         }
-        TextView firstLine = (TextView)convertView.findViewById(R.id.firstLine);
-        firstLine.setTextSize(32);
-        TextView secondLine = (TextView)convertView.findViewById(R.id.secondLine);
-        secondLine.setTextSize(16);
-
-        firstLine.setText(newsPost.title);
-        secondLine.setText(newsPost.description);
-        final ImageView imageView = (ImageView)convertView.findViewById(R.id.newsImage);
+        TextView firstLine = (TextView)convertView.findViewById(R.id.firstLine);//Get the first line from the news article entry.
+        firstLine.setTextSize(32);//Set the text size.
+        TextView secondLine = (TextView)convertView.findViewById(R.id.secondLine);//Get the second line from the news article entry.
+        secondLine.setTextSize(16);//Set the text size.
+        firstLine.setText(newsPost.title);//Set the title to the first line.
+        secondLine.setText(newsPost.description);//Set the description to the second line.
+        final ImageView imageView = (ImageView)convertView.findViewById(R.id.newsImage);//Get the image on the page.
         downloadTask asyncTask = (downloadTask) new downloadTask(imageView, new downloadTask.AsyncResponse(){
 
             public void processFinish(Bitmap output){
                 imageView.setImageBitmap(output);
             }
-        }).execute(newsPost.imageURL);
-        return convertView;
+        }).execute(newsPost.imageURL);//Perform an asynchronous request for the image and once task is completed set it as the news image.
+        return convertView;//Return the image created.
     }
 }
 
