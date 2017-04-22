@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.cmarshall.newsrssreader.AddNewsSource">
+
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30sp"
+        android:paddingTop="30sp"
+        android:text="@string/addNewsSourceTitle"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/newsSourceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="60sp"
+        android:paddingLeft="30sp"
+        android:paddingRight="30sp"
+        android:hint="@string/addNewsSourceName"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/newsSourceURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30sp"
+        android:hint="@string/addNewsSourceURL"
+        />
+    <com.skydoves.colorpickerview.ColorPickerView
+        android:id="@+id/colorPickerView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:src="@drawable/palette"
+        app:selector="@drawable/wheel" />
+
+    <Button
+        android:id="@+id/newsButton"
+        android:onClick="addNewsSourceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addNewsButton" />
+
+
+</LinearLayout>

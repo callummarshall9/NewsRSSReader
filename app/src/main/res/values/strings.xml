@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NewsRSSReader</string>
+    <string name="appDesc">Pulls in multiple RSS feeds and displays them.</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="addNewsSourceTitle">Add news source</string>
+    <string name="addNewsSourceName">Enter news source name</string>
+    <string name="addNewsSourceURL">Enter news source URL</string>
+    <string name="addNewsButton">Add news source</string>
+    <string name="startupScreenName">Add initial news sources</string>
+    <string name="guardianSource">The Guardian Technology</string>
+    <string name="bbcNewsTechnology">BBC News technology</string>
+    <string name="bbcNewsEducation">BBC News education</string>
+    <string name="startupScreenButton">Add initial news sources</string>
+    <string name="refreshFeed">Refresh feed</string>
+
+</resources>
